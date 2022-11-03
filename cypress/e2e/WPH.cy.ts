@@ -5,7 +5,7 @@ describe("home page", () => {
       //cy.get("[data-test='hero-heading']").contains("Testing Next.js ")
       //cy.get("title").contains("Place an Order - Writers Per Hour")
       //cy.get("button")
-      cy.getByData("subscribe__input").type("acb")
+      cy.getByData("subscribe__input").type("acba")
     })
   })
   
