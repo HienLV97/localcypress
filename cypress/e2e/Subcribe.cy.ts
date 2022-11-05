@@ -6,6 +6,7 @@ describe("Newsletter Subscribe Form", () => {
     context("hero section", () => {
         it("allow users to subscribe to the email list", () => {
             cy.getByData("email-input").type("abc@a.com")
+            cy.getByData("course-0").find("a")
         })
     })
 })
