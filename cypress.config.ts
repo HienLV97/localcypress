@@ -8,7 +8,7 @@ export default defineConfig({
     env:{
      
     },
-    baseUrl:'https://writersperhour.dev/',
+    baseUrl:'https://kamora:iamafriend@writersperhour.dev/',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     

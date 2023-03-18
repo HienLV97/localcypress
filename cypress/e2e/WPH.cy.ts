@@ -1,20 +1,25 @@
+
 import cypress from "cypress"
-import { Children } from "react"
-describe("home page", () => {
-  it("the h1 contains the correct text", () => {
-    cy.visit('/signin', {
-      auth: {
-        username: 'kamora',
-        password: 'iamafriend'
-      }
-    })
-      cy.viewport(1440, 786)
-    //   cy.get('.cb-enable').click()
-    //  // cy.get('.p-service-faq__btn').click()
-    //   //cy.get('.p-service-faq__btn')
-    //   //cy.get('.p-footer-nav__list > :nth-child(2)').click()
-    //   cy.get('.list-unstyled > :nth-child(1) > .d-block').click()
-    //   //cy.location("pathname").should("eq","/privacy-policy")
-    //   cy.getByData("course=0").eq(3).click()
-    })
+import { beforeEach } from "mocha"
+describe('Test Login with authenticated token', () => {
+  beforeEach(() => {
+    cy.viewport(1440, 819)
   })
+  it("homepage", () => {
+    cy.visit('/')
+  })
+  it("sign in", () => {
+    cy.visit('/signin')
+  })  
+  it("signup", () => {
+    cy.visit('/signup')
+  })
+    it('should not have 404 error', () => {
+      cy.get('a').each(($el) => {
+        const link = $el.attr('href')
+        if (link && !Cypress.dom.isStubbed(link)) {
+          cy.request(link).its('status').should('not.equal', 404)
+        }
+      })
+  })
+})
