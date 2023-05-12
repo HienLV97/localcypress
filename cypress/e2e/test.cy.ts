@@ -2,15 +2,17 @@ import cypress from "cypress"
 import { Children } from "react"
 //var devurl = "https://zingnews.vn/"
 describe("home page", () => {
-  it("the h1 contains the correct text", () => {
-    cy.visit("/signin",{
-        auth: {
-            username: 'kamora',
-            password: 'iamafriend'
-          }
+  it('use requests to navigation bar links', () => {
+    const pages = ['blog', 'about', 'contacts']
+    cy.visit('/')
+    pages.forEach(page => {
+      cy
+        .contains(page)
+        .then((link) => {
+          cy.request(link.prop('href'))
+        })
+
     })
-      cy.viewport(1440, 786)
-      cy.get('.cb-enable').click()
-    cy.get('layout-form__input w-100').type("abc")
-    })
-  })
+
+  });
+})
