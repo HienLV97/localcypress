@@ -3,16 +3,12 @@ import { Children } from "react"
 //var devurl = "https://zingnews.vn/"
 describe("home page", () => {
   it('use requests to navigation bar links', () => {
-    const pages = ['blog', 'about', 'contacts']
     cy.visit('/')
-    pages.forEach(page => {
-      cy
-        .contains(page)
-        .then((link) => {
-          cy.request(link.prop('href'))
-        })
-
+    cy.get("h1").contains("Test")
+    cy.get('[data-test="email-input"]').type("abc.def@mail")
+    cy.getDatatest("submit-button").then(($btn) => {
+      const cls = $btn.attr("class")
+      cy.wrap($btn).click().should("contain","Subscribe")
     })
-
-  });
+  })
 })

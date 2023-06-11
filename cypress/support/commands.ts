@@ -5,7 +5,9 @@ Cypress.Commands.add("getByData", (selector) => {
 Cypress.Commands.add("getlink", (selector) => {
   return cy.get(`[link=${selector}]`)
 })
-
+Cypress.Commands.add("getDatatest", (selector) => {
+  return cy.get(`[data-test=${selector}]`)
+})
 
 
 // Cypress.Commands.add('clickLink', (link) => {
