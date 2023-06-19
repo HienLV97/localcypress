@@ -8,6 +8,9 @@ Cypress.Commands.add("getlink", (selector) => {
 Cypress.Commands.add("getDatatest", (selector) => {
   return cy.get(`[data-test=${selector}]`)
 })
+Cypress.Commands.add("getClass", (selector) => {
+  return cy.get(`[class=${selector}]`)
+})
 
 
 // Cypress.Commands.add('clickLink', (link) => {

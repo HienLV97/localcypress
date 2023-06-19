@@ -1,6 +1,6 @@
 describe("Newsletter Subscribe Form", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:3000")
+        cy.visit("http://localhost:3001")
         //cy.viewport(1440, 812)
     })
     context("hero section", () => {

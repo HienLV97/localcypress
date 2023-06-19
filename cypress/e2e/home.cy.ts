@@ -1,7 +1,7 @@
 describe("home page", () => {
   beforeEach(() => {
     cy.viewport(1440, 786)
-    cy.visit("http://localhost:3000")
+    cy.visit("0")
   })
 
   context("Hero section", () => {
